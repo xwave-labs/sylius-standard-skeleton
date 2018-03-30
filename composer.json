@@ -1,6 +1,6 @@
 {
-    "name": "sylius/sylius-standard",
-    "description": "Starting point for projects powered by Sylius eCommerce.",
+    "name": "xwave-labs/sylius-docker-skeleton",
+    "description": "Starting point for projects powered by Sylius eCommerce with Docker.",
     "keywords": ["symfony", "symfony2", "sylius", "distribution", "ecommerce", "cart", "shopping"],
     "type": "project",
     "license": "MIT",
