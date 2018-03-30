@@ -25,7 +25,7 @@ Installation
 ------------
 
 ```bash
-$ composer create-project xwave-labs/sylius-standard-skeleton project-name
+$ composer create-project xwave-labs/sylius-docker-skeleton project-name
 $ cd project-name
 $ docker-compose up -d
 $ docker-compose exec app chown www-data -R /var/www/html
