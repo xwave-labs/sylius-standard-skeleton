@@ -1,0 +1,36 @@
+version: '3.2'
+
+services:
+    app:
+        build:
+          context: ./docker
+        depends_on:
+            - db
+        environment:
+          SYLIUS_DATABASE_HOST: db
+          SYLIUS_DATABASE_USER: sylius
+          SYLIUS_DATABASE_PASSWORD: sylius
+          SYLIUS_MAILER_HOST: mailhog:1025
+          SYLIUS_APP_DEV_PERMITTED: 1
+        volumes:
+            - .:/var/www/html
+        ports:
+          - 8000:80
+    mailhog:
+        image: mailhog/mailhog:latest
+        ports:
+          - 8025:8025
+    db:
+        image: percona:5.7
+        environment:
+          MYSQL_ROOT_PASSWORD: sylius
+          MYSQL_DATABASE: sylius_dev
+          MYSQL_USER: sylius
+          MYSQL_PASSWORD: sylius
+        ports:
+          - 3306:3306
+        volumes:
+          - db:/var/lib/postgresql/data
+
+volumes:
+    db:
